@@ -1,0 +1,336 @@
+// =============================================================
+// Configuración del cliente — Paige
+// Agencia de Landing Pages
+// =============================================================
+
+export const config = {
+  // ---------- Branding ----------
+  brand: {
+    name: 'Paige',
+    shortName: 'Paige',
+    profession: 'Agencia de Landing Pages',
+    specialty: 'Páginas web que convierten visitas en clientes',
+    tagline: 'Tu negocio, en línea.',
+    // El logotipo de la landing se dibuja tipográficamente (ver Wordmark.jsx)
+    // para que herede el color de la navbar clara u oscura. Este SVG queda
+    // para usos externos: favicon, OG image, firma de mails.
+    logo: '/logo.svg',
+  },
+
+  // ---------- Contacto ----------
+  contact: {
+    whatsapp: '',                          // completar
+    whatsappDisplay: '',                   // completar
+    whatsappMessage: 'Hola, me gustaría saber más sobre una landing page para mi negocio.',
+    instagram: '',                         // completar
+    instagramHandle: '',                   // completar
+    instagramUrl: '',                      // completar
+    email: '',                             // completar
+    location: 'Online · Argentina',
+    formspreeEndpoint: 'https://formspree.io/f/your-form-id',
+  },
+
+  // ---------- Paleta ----------
+  palette: {
+    primary: '#18181B',        // ink
+    primaryLight: '#3F3F46',   // ink claro
+    secondary: '#C8956C',      // terracota
+    secondaryLight: '#E2BFA3', // terracota suave
+    background: '#FAFAF5',     // paper
+    paper: '#FFFFFF',
+    textPrimary: '#18181B',
+    textSecondary: '#71717A',  // slate
+    soft: '#E8E4DC',           // sand — para fondos alternos
+    dark: '#18181B',
+
+    // Tokens para las secciones oscuras (hero, contacto, footer)
+    darkDeep: '#0B0B0D',       // fondo de sección oscura
+    darkElevated: '#141418',   // cards sobre oscuro
+    onDark: '#F4F1EA',         // texto sobre oscuro
+    onDarkMuted: 'rgba(244, 241, 234, 0.60)',
+    borderDark: 'rgba(244, 241, 234, 0.12)',
+  },
+
+  // ---------- Navbar ----------
+  navbar: {
+    ctaLabel: 'Hablemos',
+    links: [
+      { label: 'Trabajos', href: '#trabajos' },
+      { label: 'Servicios', href: '#servicios' },
+      { label: 'Proceso', href: '#metodologia' },
+      { label: 'Contacto', href: '#contacto' },
+    ],
+  },
+
+  // ---------- Hero ----------
+  hero: {
+    chip: 'Diseño web para negocios reales',
+    headline: 'La página que tu',
+    headlineAccent: 'negocio necesitaba.',
+    subtitle:
+      'Diseñamos y publicamos landing pages simples, rápidas y hechas a medida. Sin tecnicismos, sin vueltas — solo resultados.',
+    primaryCta: 'Empecemos',
+    secondaryCta: 'Ver trabajos',
+    socialProof: 'Más de 10 negocios ya tienen su página',
+    scrollHint: 'Scrolleá',
+    // Datos duros del servicio — se muestran bajo el hero
+    facts: [
+      { value: '7', unit: 'días', label: 'Entrega promedio' },
+      { value: '100', unit: '%', label: 'Diseño a medida' },
+      { value: '0', unit: 'plantillas', label: 'Todo desde cero' },
+    ],
+  },
+
+  // ---------- Marquee de capacidades ----------
+  marquee: {
+    items: [
+      'Landing pages',
+      'Software a medida',
+      'Diseño de marca',
+      'React',
+      'Deploy en Vercel',
+      'Dominio propio',
+      'Mobile first',
+      'SEO técnico',
+      'Formularios',
+      'Mantenimiento',
+    ],
+  },
+
+  // ---------- Sobre mí ----------
+  about: {
+    overline: 'Quiénes somos',
+    title: 'Una primera impresión que no se olvida.',
+    paragraphs: [
+      'Paige nació de una idea simple: los negocios chicos merecen páginas tan buenas como las de los grandes. Sin costos desproporcionados, sin proyectos eternos, sin jerga técnica.',
+      'Nos especializamos en landing pages y software a medida — rápidas de lanzar y pensadas para convertir. Vos te enfocás en tu negocio; nosotros lo ponemos en línea.',
+    ],
+    quote:
+      'Una buena página web no es un gasto. Es el primer empleado que trabaja las 24 horas.',
+    highlights: [
+      'Entrega en días, no en meses',
+      'Diseño + desarrollo + deploy incluidos',
+      'Soporte postventa real',
+    ],
+  },
+
+  // ---------- Trabajos / Portfolio ----------
+  // Cada entrada se dibuja como un mockup en CSS usando su propia paleta.
+  // Cuando tengas capturas reales, poné la ruta en `screenshot` y el
+  // componente la usa en lugar del mockup generado.
+  work: {
+    overline: 'Trabajos',
+    title: 'Cada proyecto arranca de cero.',
+    subtitle:
+      'Comparten el cuidado por el detalle, no la plantilla. Estos son los últimos dos.',
+    ctaLabel: 'Ver sitio',
+    items: [
+      {
+        id: 'romina',
+        client: 'Romina Iglesias',
+        sector: 'Nutrición deportiva',
+        year: '2025',
+        url: '', // TODO: pegar la URL de Vercel / dominio propio
+        screenshot: null,
+        description:
+          'Landing para una licenciada en nutrición especializada en deporte. Paleta en verde salvia, foco en reservar consulta y una sección de metodología que ordena el proceso de acompañamiento.',
+        tags: ['Landing page', 'React + MUI', 'Formspree', 'Vercel'],
+        mockup: {
+          brand: 'Romina Iglesias',
+          chip: 'Nutrición personalizada',
+          nav: ['Sobre mí', 'Planes', 'Metodología', 'Contacto'],
+          headline: 'Nutrición que potencia tu',
+          headlineAccent: 'rendimiento',
+          cta: 'Reservar consulta',
+          darkHero: false,
+          shape: 'circle',
+          palette: {
+            bg: '#FAFAF5',
+            surface: '#FFFFFF',
+            ink: '#2C2C2C',
+            muted: '#6B6B6B',
+            accent: '#4A7C59',
+            accentSoft: '#7FAF8A',
+            highlight: '#C8956C',
+          },
+        },
+      },
+      {
+        id: 'goitiametal',
+        client: 'Goitia Metal',
+        sector: 'Metalúrgica & herrería',
+        year: '2025',
+        url: '', // TODO: pegar la URL de Vercel / dominio propio
+        screenshot: null,
+        description:
+          'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, hero a pantalla completa e íconos ilustrados a partir de material del cliente.',
+        tags: ['Landing page', 'React + MUI', 'Assets custom', 'Vercel'],
+        mockup: {
+          brand: 'GOITIA METAL',
+          chip: 'Trabajos a medida',
+          nav: ['Trabajos', 'Servicios', 'Proceso', 'Contacto'],
+          headline: 'Estructuras metálicas para',
+          headlineAccent: 'proyectos de arquitectura',
+          cta: 'Pedir presupuesto',
+          darkHero: true,
+          shape: 'grid',
+          palette: {
+            bg: '#F4F4F1',
+            surface: '#FFFFFF',
+            ink: '#141414',
+            muted: '#6E6E6E',
+            accent: '#C4A47C',
+            accentSoft: '#DCC6A6',
+            highlight: '#141414',
+          },
+        },
+      },
+    ],
+  },
+
+  // ---------- Servicios ----------
+  services: {
+    overline: 'Qué hacemos',
+    title: 'Servicios pensados para negocios reales',
+    subtitle: 'Sin paquetes genéricos. Cada proyecto es único.',
+    items: [
+      {
+        icon: 'RocketLaunch',
+        title: 'Landing page',
+        description:
+          'Página única de alto impacto para presentar tu negocio, captar leads o lanzar un producto. Diseño, desarrollo y deploy incluidos.',
+        tag: 'Desde 7 días hábiles',
+        featured: true,
+      },
+      {
+        icon: 'Devices',
+        title: 'Software a medida',
+        description:
+          'Aplicaciones web personalizadas para digitalizar procesos, gestionar turnos, vender online o lo que tu negocio necesite.',
+        tag: 'Presupuesto a consultar',
+      },
+      {
+        icon: 'TrendingUp',
+        title: 'Optimización y rediseño',
+        description:
+          'Mejoramos tu página actual: velocidad, conversión y diseño. Identificamos qué no está funcionando y lo resolvemos.',
+        tag: 'Análisis gratuito',
+      },
+      {
+        icon: 'SupportAgent',
+        title: 'Mantenimiento',
+        description:
+          'Actualizaciones de contenido, correcciones técnicas y soporte continuo para que tu página esté siempre impecable.',
+        tag: 'Plan mensual',
+      },
+    ],
+  },
+
+  // ---------- Metodología ----------
+  // Se renderiza como scroll narrativo: a medida que scrolleás, el mockup
+  // de la derecha se va armando paso a paso.
+  methodology: {
+    overline: 'Cómo trabajamos',
+    title: 'Mirá cómo se arma tu página.',
+    subtitle: 'Un proceso claro de principio a fin. Scrolleá para verlo.',
+    steps: [
+      {
+        number: '01',
+        label: 'Charla inicial',
+        description:
+          'Entendemos tu negocio, tus objetivos y tu público. Sin formularios largos: una llamada o chat alcanza.',
+        // Texto que "se escribe" dentro del mockup en este paso
+        note: 'Rubro, público, objetivo, referencias…',
+      },
+      {
+        number: '02',
+        label: 'Propuesta',
+        description:
+          'En 24–48 hs te enviamos una propuesta con alcance, tiempos y precio. Sin letra chica.',
+        note: 'Estructura y secciones definidas',
+      },
+      {
+        number: '03',
+        label: 'Diseño y desarrollo',
+        description:
+          'Trabajamos en tu proyecto y te mostramos avances. Tu feedback es parte del proceso, no un extra.',
+        note: 'Paleta, tipografía y contenido real',
+      },
+      {
+        number: '04',
+        label: 'Publicación',
+        description:
+          'Deploy con tu dominio propio, configuración técnica incluida. Te entregamos todo funcionando.',
+        note: 'En línea, con dominio propio',
+      },
+    ],
+  },
+
+  // ---------- Testimonios ----------
+  testimonials: {
+    overline: 'Clientes',
+    title: 'Negocios que ya están en línea.',
+    items: [
+      {
+        name: 'Sofía M.',
+        role: 'Nutricionista',
+        rating: 5,
+        text: 'En menos de una semana tenía mi página lista y funcionando. Muy clara la comunicación durante todo el proceso y el resultado superó lo que imaginaba.',
+      },
+      {
+        name: 'Rodrigo T.',
+        role: 'Entrenador personal',
+        rating: 5,
+        text: 'Necesitaba algo profesional sin gastar una fortuna. Paige fue exactamente eso. Rápido, prolijo y sin vueltas.',
+      },
+      {
+        name: 'Valentina C.',
+        role: 'Estudio de yoga',
+        rating: 5,
+        text: 'Me gustó mucho que se tomaron el tiempo de entender lo que quería. No es una plantilla genérica — se nota que es para mi negocio.',
+      },
+    ],
+  },
+
+  // ---------- Contacto ----------
+  contactSection: {
+    overline: 'Contacto',
+    title: 'Hablemos.',
+    subtitle:
+      'Contanos de tu negocio y te respondemos en menos de 24 hs con una propuesta o una charla.',
+    formLabels: {
+      name: 'Nombre',
+      email: 'Email',
+      message: '¿De qué se trata tu negocio?',
+      submit: 'Enviar',
+    },
+    whatsappLabel: 'Prefiero escribir por WhatsApp',
+    infoTitle: 'Otros canales',
+  },
+
+  // ---------- Footer ----------
+  footer: {
+    tagline: 'Páginas web simples, rápidas y hechas para cada negocio.',
+    rights: 'Todos los derechos reservados.',
+    credit: 'Diseñada y desarrollada por Paige.',
+    columns: [
+      {
+        title: 'Servicios',
+        links: [
+          { label: 'Landing page', href: '#servicios' },
+          { label: 'Software a medida', href: '#servicios' },
+          { label: 'Mantenimiento', href: '#servicios' },
+        ],
+      },
+      {
+        title: 'Navegación',
+        links: [
+          { label: 'Trabajos', href: '#trabajos' },
+          { label: 'Servicios', href: '#servicios' },
+          { label: 'Proceso', href: '#metodologia' },
+          { label: 'Contacto', href: '#contacto' },
+        ],
+      },
+    ],
+  },
+};
