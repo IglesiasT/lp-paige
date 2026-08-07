@@ -5,8 +5,6 @@ import SiteMockup from './SiteMockup.jsx';
 import Reveal from './Reveal.jsx';
 import SectionHeading from './SectionHeading.jsx';
 
-const p = config.palette;
-
 const Work = () => (
   <Box
     id="trabajos"
@@ -158,53 +156,50 @@ const Work = () => (
                   {item.description}
                 </Typography>
 
-                {/* Paleta del proyecto */}
-                <Stack direction="row" spacing={1} sx={{ mb: 3 }}>
-                  {[
-                    item.mockup.palette.ink,
-                    item.mockup.palette.accent,
-                    item.mockup.palette.accentSoft,
-                    item.mockup.palette.bg,
-                  ].map((swatch) => (
-                    <Box
-                      key={swatch}
-                      title={swatch}
-                      sx={{
-                        width: 26,
-                        height: 26,
-                        borderRadius: '50%',
-                        bgcolor: swatch,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                      }}
-                    />
-                  ))}
-                </Stack>
+                {/* Qué le resolvió la página al cliente, en su idioma */}
+                <Box sx={{ mb: item.url ? 3.5 : 0 }}>
+                  <Typography
+                    variant="overline"
+                    sx={{
+                      color: 'text.secondary',
+                      textTransform: 'uppercase',
+                      display: 'block',
+                      mb: 1.75,
+                    }}
+                  >
+                    {config.work.solvedLabel}
+                  </Typography>
 
-                <Stack
-                  direction="row"
-                  sx={{ flexWrap: 'wrap', gap: 1, mb: item.url ? 3.5 : 0 }}
-                >
-                  {item.tags.map((tag) => (
-                    <Box
-                      key={tag}
-                      sx={{
-                        px: 1.5,
-                        py: 0.6,
-                        borderRadius: 99,
-                        border: '1px solid',
-                        borderColor: 'divider',
-                        fontFamily: (t) => t.typography.fontFamilyMono,
-                        fontSize: '0.68rem',
-                        letterSpacing: '0.04em',
-                        color: 'text.secondary',
-                        bgcolor: p.soft,
-                      }}
-                    >
-                      {tag}
-                    </Box>
-                  ))}
-                </Stack>
+                  <Stack spacing={1.25}>
+                    {item.solved.map((point) => (
+                      <Stack
+                        key={point}
+                        direction="row"
+                        spacing={1.75}
+                        alignItems="flex-start"
+                      >
+                        <Box
+                          sx={{
+                            width: 14,
+                            height: 1,
+                            bgcolor: 'secondary.main',
+                            mt: '0.75em',
+                            flexShrink: 0,
+                          }}
+                        />
+                        <Typography
+                          sx={{
+                            fontSize: '0.94rem',
+                            color: 'text.primary',
+                            lineHeight: 1.6,
+                          }}
+                        >
+                          {point}
+                        </Typography>
+                      </Stack>
+                    ))}
+                  </Stack>
+                </Box>
 
                 {item.url && (
                   <Button

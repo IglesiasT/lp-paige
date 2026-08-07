@@ -99,6 +99,7 @@ export const config = {
     title: 'Cada negocio con su propia cara.',
     subtitle: '',
     ctaLabel: 'Ver sitio',
+    solvedLabel: 'Qué resolvimos',
     items: [
       {
         id: 'romina',
@@ -108,8 +109,12 @@ export const config = {
         url: 'https://lp-romina.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
         screenshot: null,
         description:
-          'Landing para una licenciada en nutrición especializada en deporte. Paleta en verde salvia, foco en reservar consulta y una sección de metodología que ordena el proceso de acompañamiento.',
-        tags: ['Landing page', 'React + MUI', 'Formspree', 'Vercel'],
+          'Landing para licenciada en nutrición especializada en deporte. Foco en reservar consultas y una sección de metodología que ordena el proceso de acompañamiento.',
+        solved: [
+          'Turnos a un solo click.',
+          'Planes explicados una sola vez.',
+          'Un lugar propio, más allá de Instagram.',
+        ],
         mockup: {
           // `view` define qué parte del sitio se dibuja. Cada proyecto muestra
           // una sección distinta para que las miniaturas no se lean como la
@@ -142,7 +147,11 @@ export const config = {
         screenshot: null,
         description:
           'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, con el peso puesto en la obra: una grilla de proyectos a sangre y un proceso de cuatro pasos.',
-        tags: ['Landing page', 'React + MUI', 'Assets custom', 'Vercel'],
+        solved: [
+          'La obra a la vista, sin necesidad de enviar fotos.',
+          'Explicación clara de los servicios ofrecidos.',
+          'Presencia frente a estudios de arquitectura.',
+        ],
         mockup: {
           // Reproduce la sección Trabajos del sitio real (ver
           // lp-goitiametal/mockup.jpeg): el foco del cliente está en mostrar
