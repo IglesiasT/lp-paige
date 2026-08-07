@@ -67,7 +67,7 @@ export const config = {
     headline: 'La página que tu',
     headlineAccent: 'negocio necesitaba.',
     subtitle:
-      'Diseñamos y publicamos landing pages simples, rápidas y hechas a medida. Sin tecnicismos, sin vueltas — solo resultados.',
+      'Con la personalidad de tu negocio, publicada rápido y sin vueltas.',
     primaryCta: 'Empecemos',
     secondaryCta: 'Ver trabajos',
     socialProof: 'Más de 10 negocios ya tienen su página',

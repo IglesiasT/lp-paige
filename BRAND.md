@@ -125,11 +125,16 @@ Todo movimiento se apaga con `prefers-reduced-motion: reduce`.
 
 **directo · sin tecnicismos · cercano · confiable · sin sobre-vender**
 
+- **Siempre en plural.** "Nos ocupamos", "diseñamos", "contanos". Aunque Paige
+  sea una sola persona, el plural da respaldo frente a quien está eligiendo entre
+  una agencia y un freelance. Nunca en singular.
 - Voseo argentino. "Contanos", "vos seguí con tu negocio".
 - Frases cortas. Si una oración necesita una coma para respirar, va punto.
 - Nombrar el dolor, no la tecnología. No es "un módulo de presupuestos", es
   "dejar de perder media hora armando cada presupuesto".
-- Prometer el techo, no el piso: si tarda 24 a 48 hs, decir 48.
+- **Velocidad sin número.** Se enfatiza que es rápido, no se fija un plazo
+  exacto: "en días, no en meses" sí; "en 7 días" no. Un número en el sitio se
+  convierte en una expectativa que hay que cumplir en todos los casos.
 
 ### Qué no decimos
 
