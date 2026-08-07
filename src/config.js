@@ -141,20 +141,25 @@ export const config = {
         url: 'https://lp-goitiametal.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
         screenshot: null,
         description:
-          'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, hero a pantalla completa e íconos ilustrados a partir de material del cliente.',
+          'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, con el peso puesto en la obra: una grilla de proyectos a sangre y un proceso de cuatro pasos.',
         tags: ['Landing page', 'React + MUI', 'Assets custom', 'Vercel'],
         mockup: {
-          // Muestra la galería de obras en vez del hero: distinta estructura,
-          // distintas proporciones, no compite con la miniatura de Romina.
+          // Reproduce la sección Trabajos del sitio real (ver
+          // lp-goitiametal/mockup.jpeg): el foco del cliente está en mostrar
+          // obra, no en la marca personal como en el caso de Romina.
           view: 'gallery',
-          brand: 'GOITIA METAL',
-          nav: ['Trabajos', 'Servicios', 'Proceso', 'Contacto'],
-          cta: 'Pedir presupuesto',
+          logoLines: ['GOITIA', 'METAL'],
+          nav: ['Inicio', 'Servicios', 'Trabajos', 'Nosotros', 'Contacto'],
+          navActive: 'Inicio',
+          cta: 'Solicitar presupuesto',
+          ctaOutline: true,
           darkHero: true,
           sectionOverline: 'Trabajos',
-          sectionTitle: 'Pérgolas, quinchos y estructuras a medida.',
-          tiles: ['Pérgola', 'Quincho', 'Escalera', 'Portón'],
-          steps: ['Medición', 'Proyecto', 'Fabricación', 'Montaje'],
+          sectionTitle: 'Proyectos que hablan de nosotros.',
+          galleryCta: 'Ver todos los trabajos',
+          processOverline: 'Cómo trabajamos',
+          processTitle: 'Un proceso claro, resultados impecables.',
+          steps: ['Relevamiento', 'Diseño', 'Fabricación', 'Montaje'],
           palette: {
             bg: '#F4F4F1',
             surface: '#FFFFFF',

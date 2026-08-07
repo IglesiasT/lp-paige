@@ -108,25 +108,51 @@ const SiteNav = ({ c, spec }) => {
         borderBottom: dark ? 'none' : '1px solid rgba(24,24,27,0.06)',
       }}
     >
-      <Box
-        sx={{
-          fontSize: '1em',
-          fontWeight: 700,
-          letterSpacing: dark ? '0.12em' : '-0.01em',
-          color: c.accent,
-          fontFamily: dark ? 'inherit' : '"Playfair Display", serif',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        {spec.brand}
-      </Box>
+      {spec.logoLines ? (
+        // Logotipo apilado, como el de Goitia Metal
+        <Stack spacing="0.1em" sx={{ lineHeight: 1 }}>
+          <Box sx={{ fontSize: '1.05em', fontWeight: 800, color: '#fff', lineHeight: 1 }}>
+            {spec.logoLines[0]}
+          </Box>
+          <Box
+            sx={{
+              fontSize: '0.6em',
+              fontWeight: 600,
+              letterSpacing: '0.42em',
+              color: '#fff',
+              lineHeight: 1,
+            }}
+          >
+            {spec.logoLines[1]}
+          </Box>
+        </Stack>
+      ) : (
+        <Box
+          sx={{
+            fontSize: '1em',
+            fontWeight: 700,
+            letterSpacing: '-0.01em',
+            color: c.accent,
+            fontFamily: '"Playfair Display", serif',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {spec.brand}
+        </Box>
+      )}
+
       <Stack direction="row" spacing="1.2em" alignItems="center">
         {spec.nav.map((n) => (
           <Box
             key={n}
             sx={{
               fontSize: '0.78em',
-              color: dark ? 'rgba(255,255,255,0.7)' : c.muted,
+              color:
+                n === spec.navActive
+                  ? c.accent
+                  : dark
+                    ? 'rgba(255,255,255,0.7)'
+                    : c.muted,
               whiteSpace: 'nowrap',
               display: { xs: 'none', sm: 'block' },
             }}
@@ -137,16 +163,18 @@ const SiteNav = ({ c, spec }) => {
         <Box
           sx={{
             px: '1em',
-            py: '0.5em',
-            borderRadius: 99,
-            bgcolor: c.accent,
-            color: dark ? c.ink : '#fff',
+            py: '0.55em',
+            borderRadius: spec.ctaOutline ? '0.35em' : 99,
+            border: spec.ctaOutline ? '1px solid' : 'none',
+            borderColor: c.accent,
+            bgcolor: spec.ctaOutline ? 'transparent' : c.accent,
+            color: spec.ctaOutline ? c.accent : dark ? c.ink : '#fff',
             fontSize: '0.72em',
             fontWeight: 600,
             whiteSpace: 'nowrap',
           }}
         >
-          {spec.cta}
+          {spec.cta} {spec.ctaOutline && '→'}
         </Box>
       </Stack>
     </Stack>
@@ -310,117 +338,169 @@ const HeroView = ({ c, spec }) => (
   </>
 );
 
+// Tonos que imitan las fotos de obra reales: metal, vidrio, madera, hormigón
+// y ladrillo. Sin esto la grilla se lee como bloques grises.
+const PHOTO_TONES = [
+  ['#3C3C39', '#121211'],
+  ['#465560', '#13171A'],
+  ['#6B5236', '#241C13'],
+  ['#5A5A55', '#232320'],
+  ['#7A4A3A', '#2A1913'],
+];
+
+const Photo = ({ i, flex }) => {
+  const [from, to] = PHOTO_TONES[i % PHOTO_TONES.length];
+  return (
+    <Box
+      sx={{
+        flex,
+        borderRadius: '0.2em',
+        background: `linear-gradient(${130 + (i % 4) * 22}deg, ${from} 0%, ${to} 100%)`,
+      }}
+    />
+  );
+};
+
 /**
- * Vista 2 — la galería de obras. Grilla asimétrica de cuatro piezas y una
- * franja de proceso: nada que ver con las tres cards iguales de HeroView.
+ * Vista 2 — la sección Trabajos del sitio real de Goitia Metal.
+ * Mosaico denso de obra sobre negro (5 arriba, 4 abajo) más la franja de
+ * proceso. Reproduce `lp-goitiametal/mockup.jpeg`.
  */
 const GalleryView = ({ c, spec }) => {
-  // Cada tile ocupa un lugar distinto de una grilla de 4×2.
-  const areas = [
-    { col: 'span 2', row: 'span 2' },
-    { col: 'span 2', row: 'span 1' },
-    { col: 'span 1', row: 'span 1' },
-    { col: 'span 1', row: 'span 1' },
-  ];
+  // Anchos desparejos: es lo que hace que se lea como un mosaico de fotos y
+  // no como una grilla de cards.
+  const row1 = [1.05, 1.15, 0.95, 0.95, 1];
+  const row2 = [1, 1.1, 1, 1.6];
 
   return (
     <>
-      <Box sx={{ px: '1.7em', pt: '1.5em', pb: '1.1em', bgcolor: c.bg }}>
+      <Box sx={{ bgcolor: c.ink, px: '1.7em', pt: '1.7em', pb: '1.5em' }}>
+        <Stack
+          direction="row"
+          alignItems="flex-end"
+          justifyContent="space-between"
+          sx={{ mb: '1.3em', gap: '1em' }}
+        >
+          <Box>
+            <Box
+              sx={{
+                fontSize: '0.56em',
+                fontWeight: 600,
+                letterSpacing: '0.24em',
+                textTransform: 'uppercase',
+                color: c.accent,
+                mb: '0.8em',
+              }}
+            >
+              {spec.sectionOverline}
+            </Box>
+            <Box
+              sx={{
+                fontSize: '1.55em',
+                fontWeight: 700,
+                lineHeight: 1.15,
+                letterSpacing: '-0.02em',
+                color: '#fff',
+              }}
+            >
+              {spec.sectionTitle}
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              px: '1em',
+              py: '0.55em',
+              borderRadius: '0.35em',
+              border: '1px solid rgba(255,255,255,0.35)',
+              color: '#fff',
+              fontSize: '0.66em',
+              fontWeight: 600,
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
+            }}
+          >
+            {spec.galleryCta} →
+          </Box>
+        </Stack>
+
+        <Stack spacing="0.45em">
+          <Stack direction="row" spacing="0.45em" sx={{ height: '5.2em' }}>
+            {row1.map((flex, i) => (
+              <Photo key={i} i={i} flex={flex} />
+            ))}
+          </Stack>
+          <Stack direction="row" spacing="0.45em" sx={{ height: '5.2em' }}>
+            {row2.map((flex, i) => (
+              <Photo key={i} i={i + 3} flex={flex} />
+            ))}
+          </Stack>
+        </Stack>
+      </Box>
+
+      {/* Arranque de la sección de proceso, cortada por el borde */}
+      <Box sx={{ bgcolor: c.bg, px: '1.7em', pt: '1.6em', pb: '1.7em' }}>
         <Box
           sx={{
-            fontFamily: '"JetBrains Mono", monospace',
-            fontSize: '0.58em',
-            letterSpacing: '0.2em',
+            fontSize: '0.56em',
+            fontWeight: 600,
+            letterSpacing: '0.24em',
             textTransform: 'uppercase',
             color: c.accent,
             mb: '0.7em',
           }}
         >
-          {spec.sectionOverline}
+          {spec.processOverline}
         </Box>
         <Box
           sx={{
-            fontFamily: '"Playfair Display", serif',
-            fontSize: '1.6em',
-            lineHeight: 1.1,
+            fontSize: '1.35em',
+            fontWeight: 700,
             letterSpacing: '-0.02em',
             color: c.ink,
-            maxWidth: '75%',
+            mb: '1.3em',
           }}
         >
-          {spec.sectionTitle}
+          {spec.processTitle}
         </Box>
-      </Box>
 
-      <Box
-        sx={{
-          px: '1.7em',
-          bgcolor: c.bg,
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gridAutoRows: '5.4em',
-          gap: '0.7em',
-        }}
-      >
-        {spec.tiles.map((tile, i) => (
-          <Box
-            key={tile}
-            sx={{
-              gridColumn: areas[i].col,
-              gridRow: areas[i].row,
-              borderRadius: '0.7em',
-              overflow: 'hidden',
-              position: 'relative',
-              // Simula una foto de obra: degradado metálico con reflejo bronce
-              background: `linear-gradient(${145 + i * 25}deg, ${c.ink} 0%, #4A4A4A 55%, ${c.accentSoft}55 100%)`,
-              display: 'flex',
-              alignItems: 'flex-end',
-              p: '0.7em',
-            }}
-          >
-            <Box
-              sx={{
-                fontSize: '0.62em',
-                fontWeight: 600,
-                color: '#fff',
-                textShadow: '0 1px 3px rgba(0,0,0,0.5)',
-              }}
-            >
-              {tile}
-            </Box>
-          </Box>
-        ))}
+        <Stack direction="row" alignItems="flex-start" sx={{ gap: '0.9em' }}>
+          {spec.steps.map((step, i) => (
+            <Stack key={step} direction="row" sx={{ flex: 1, gap: '0.6em' }}>
+              <Stack spacing="0.35em" sx={{ flex: 1 }}>
+                <Box
+                  sx={{
+                    fontSize: '1.15em',
+                    fontWeight: 400,
+                    color: c.muted,
+                    opacity: 0.55,
+                    lineHeight: 1,
+                  }}
+                >
+                  0{i + 1}
+                </Box>
+                <Box sx={{ fontSize: '0.68em', fontWeight: 700, color: c.ink }}>
+                  {step}
+                </Box>
+                <Bar w="100%" c={c.muted} o={0.32} h="0.3em" />
+                <Bar w="75%" c={c.muted} o={0.32} h="0.3em" />
+              </Stack>
+              {i < spec.steps.length - 1 && (
+                <Box
+                  sx={{
+                    fontSize: '0.9em',
+                    color: c.muted,
+                    opacity: 0.4,
+                    alignSelf: 'center',
+                  }}
+                >
+                  ›
+                </Box>
+              )}
+            </Stack>
+          ))}
+        </Stack>
       </Box>
-
-      <Stack
-        direction="row"
-        sx={{
-          mt: '1.5em',
-          bgcolor: c.ink,
-          px: '1.7em',
-          py: '1.3em',
-          gap: '1.4em',
-        }}
-      >
-        {spec.steps.map((step, i) => (
-          <Stack key={step} spacing="0.45em" sx={{ flex: 1 }}>
-            <Box
-              sx={{
-                fontFamily: '"JetBrains Mono", monospace',
-                fontSize: '0.55em',
-                letterSpacing: '0.14em',
-                color: c.accent,
-              }}
-            >
-              0{i + 1}
-            </Box>
-            <Box sx={{ fontSize: '0.68em', fontWeight: 600, color: '#fff' }}>
-              {step}
-            </Box>
-            <Bar w="80%" c="#fff" o={0.25} h="0.3em" />
-          </Stack>
-        ))}
-      </Stack>
     </>
   );
 };
