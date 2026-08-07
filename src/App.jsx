@@ -1,7 +1,6 @@
 import { Box, GlobalStyles } from '@mui/material';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
-import Marquee from './components/Marquee.jsx';
 import Work from './components/Work.jsx';
 import About from './components/About.jsx';
 import Services from './components/Services.jsx';
@@ -46,7 +45,6 @@ const App = () => (
     <Navbar />
     <main>
       <Hero />
-      <Marquee />
       <Work />
       <About />
       <Services />

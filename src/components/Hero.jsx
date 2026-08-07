@@ -22,11 +22,6 @@ const fadeUp = keyframes`
   to   { opacity: 1; transform: translate3d(0, 0, 0); }
 `;
 
-const pulse = keyframes`
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.4; transform: scale(0.85); }
-`;
-
 const bob = keyframes`
   0%, 100% { transform: translateY(0); }
   50%      { transform: translateY(6px); }
@@ -116,7 +111,9 @@ const Hero = () => {
         minHeight: { xs: 'auto', md: '100svh' },
         display: 'flex',
         alignItems: 'center',
-        pt: { xs: 14, md: 12 },
+        // El padding superior tiene que despejar la navbar flotante, que es
+        // fixed y no ocupa espacio en el flujo.
+        pt: { xs: 15, md: 18 },
         pb: { xs: 8, md: 12 },
       }}
     >
@@ -174,32 +171,6 @@ const Hero = () => {
         >
           {/* ---------- Columna de texto ---------- */}
           <Box sx={{ order: { xs: 2, md: 1 } }}>
-            <Stack
-              direction="row"
-              spacing={1.25}
-              alignItems="center"
-              sx={{
-                mb: 3.5,
-                animation: reduced ? 'none' : `${fadeUp} 0.8s ease both`,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: '50%',
-                  bgcolor: 'secondary.main',
-                  animation: reduced ? 'none' : `${pulse} 2.4s ease-in-out infinite`,
-                }}
-              />
-              <Typography
-                variant="overline"
-                sx={{ color: p.onDarkMuted, textTransform: 'uppercase' }}
-              >
-                {config.hero.chip}
-              </Typography>
-            </Stack>
-
             <Typography
               variant="h1"
               sx={{
@@ -340,7 +311,6 @@ const Hero = () => {
       <Stack
         aria-hidden
         alignItems="center"
-        spacing={1}
         sx={{
           position: 'absolute',
           bottom: 28,
@@ -351,12 +321,6 @@ const Hero = () => {
           animation: reduced ? 'none' : `${fadeUp} 1s ease 1.2s both`,
         }}
       >
-        <Typography
-          variant="overline"
-          sx={{ color: p.onDarkMuted, textTransform: 'uppercase' }}
-        >
-          {config.hero.scrollHint}
-        </Typography>
         <ArrowDownwardIcon
           sx={{
             fontSize: 18,

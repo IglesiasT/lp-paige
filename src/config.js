@@ -64,7 +64,6 @@ export const config = {
 
   // ---------- Hero ----------
   hero: {
-    chip: 'Diseño web para negocios reales',
     headline: 'La página que tu',
     headlineAccent: 'negocio necesitaba.',
     subtitle:
@@ -72,28 +71,12 @@ export const config = {
     primaryCta: 'Empecemos',
     secondaryCta: 'Ver trabajos',
     socialProof: 'Más de 10 negocios ya tienen su página',
-    scrollHint: 'Scrolleá',
-    // Datos duros del servicio — se muestran bajo el hero
+    // Los tres datos cuentan el proceso en orden cronológico: qué te pedimos,
+    // cuándo tenés el precio, cuándo está publicada. Todo verificable.
     facts: [
+      { value: '1', unit: 'charla', label: 'Con eso arrancamos' },
+      { value: '48', unit: 'hs', label: 'Presupuesto en tu mano' },
       { value: '7', unit: 'días', label: 'Entrega promedio' },
-      { value: '100', unit: '%', label: 'Diseño a medida' },
-      { value: '0', unit: 'plantillas', label: 'Todo desde cero' },
-    ],
-  },
-
-  // ---------- Marquee de capacidades ----------
-  marquee: {
-    items: [
-      'Landing pages',
-      'Software a medida',
-      'Diseño de marca',
-      'React',
-      'Deploy en Vercel',
-      'Dominio propio',
-      'Mobile first',
-      'SEO técnico',
-      'Formularios',
-      'Mantenimiento',
     ],
   },
 
