@@ -146,7 +146,7 @@ export const config = {
         url: 'https://lp-goitiametal.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
         screenshot: null,
         description:
-          'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, con el peso puesto en la obra: una grilla de proyectos a sangre y un proceso de cuatro pasos.',
+          'Landing para metalúrgica de renombre en Zona Norte que trabaja con estudios de arquitectura. Peso puesto en las obras: grilla de proyectos y metodología de trabajo clara.',
         solved: [
           'La obra a la vista, sin necesidad de enviar fotos.',
           'Explicación clara de los servicios ofrecidos.',
