@@ -71,13 +71,6 @@ export const config = {
     primaryCta: 'Empecemos',
     secondaryCta: 'Ver trabajos',
     socialProof: 'Más de 10 negocios ya tienen su página',
-    // Los tres datos cuentan el proceso en orden cronológico: qué te pedimos,
-    // cuándo tenés el precio, cuándo está publicada. Todo verificable.
-    facts: [
-      { value: '1', unit: 'charla', label: 'Con eso arrancamos' },
-      { value: '48', unit: 'hs', label: 'Presupuesto en tu mano' },
-      { value: '7', unit: 'días', label: 'Entrega promedio' },
-    ],
   },
 
   // ---------- Sobre mí ----------

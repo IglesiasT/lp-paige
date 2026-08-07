@@ -90,8 +90,12 @@ Tres familias, tres roles. Se cargan desde Google Fonts en `index.html`.
 | Familia | Rol | Dónde |
 |---|---|---|
 | **Playfair Display** | Títulos | `h1`–`h4`, números grandes, logotipo |
-| **Inter** | Cuerpo | Párrafos, botones, navegación, `h5`–`h6` |
+| **DM Sans** | Cuerpo | Párrafos, botones, navegación, `h5`–`h6` |
 | **JetBrains Mono** | Etiquetas técnicas | Overlines, numeración (`01`, `02`), tags, año, metadatos |
+
+El cuerpo fue Inter hasta agosto de 2026. Se cambió a **DM Sans** porque Inter,
+por lo extendida que está, no aportaba carácter: es geométrica, de bajo contraste
+y suaviza el alto contraste del Playfair sin competirle.
 
 El mono es lo que más diferencia a Paige de las landings de clientes. Va siempre
 en tamaño chico, con `letter-spacing` amplio y casi siempre en mayúsculas.

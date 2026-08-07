@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles';
 
 const HEADING_FAMILY = '"Playfair Display", "Georgia", serif';
-const BODY_FAMILY = '"Inter", "Helvetica", "Arial", sans-serif';
+const BODY_FAMILY = '"DM Sans", "Helvetica", "Arial", sans-serif';
 // Mono para overlines, numeración y etiquetas técnicas — es lo que le da
 // el aire de estudio de diseño y la diferencia de las landings de clientes.
 const MONO_FAMILY = '"JetBrains Mono", "SFMono-Regular", "Consolas", monospace';

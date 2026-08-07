@@ -205,7 +205,6 @@ const Hero = () => {
               direction={{ xs: 'column', sm: 'row' }}
               spacing={2}
               sx={{
-                mb: 6,
                 animation: reduced ? 'none' : `${fadeUp} 0.8s ease 0.65s both`,
               }}
             >
@@ -234,54 +233,6 @@ const Hero = () => {
               >
                 {config.hero.secondaryCta}
               </Button>
-            </Stack>
-
-            {/* Datos duros del servicio */}
-            <Stack
-              direction="row"
-              sx={{
-                gap: { xs: 3, sm: 5 },
-                flexWrap: 'wrap',
-                animation: reduced ? 'none' : `${fadeUp} 0.8s ease 0.8s both`,
-              }}
-            >
-              {config.hero.facts.map((fact) => (
-                <Box key={fact.label}>
-                  <Typography
-                    component="p"
-                    sx={{
-                      fontFamily: (t) => t.typography.fontFamilyHeading,
-                      fontSize: { xs: '1.9rem', md: '2.2rem' },
-                      lineHeight: 1,
-                      color: p.onDark,
-                    }}
-                  >
-                    {fact.value}
-                    <Box
-                      component="span"
-                      sx={{
-                        fontFamily: (t) => t.typography.fontFamilyMono,
-                        fontSize: '0.7rem',
-                        color: 'secondary.main',
-                        ml: 0.75,
-                        letterSpacing: '0.08em',
-                      }}
-                    >
-                      {fact.unit}
-                    </Box>
-                  </Typography>
-                  <Typography
-                    sx={{
-                      mt: 0.75,
-                      fontSize: '0.8rem',
-                      color: p.onDarkMuted,
-                      letterSpacing: '0.01em',
-                    }}
-                  >
-                    {fact.label}
-                  </Typography>
-                </Box>
-              ))}
             </Stack>
           </Box>
 
