@@ -118,7 +118,13 @@ const About = () => (
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: { xs: '1fr', sm: 'repeat(3, 1fr)' },
+              // auto-fit en vez de un número fijo: la grilla se adapta a la
+              // cantidad de highlights que haya en el config, sin dejar
+              // columnas vacías si son dos o apretarse si son cuatro.
+              gridTemplateColumns: {
+                xs: '1fr',
+                sm: 'repeat(auto-fit, minmax(220px, 1fr))',
+              },
               gap: { xs: 2, md: 3 },
             }}
           >

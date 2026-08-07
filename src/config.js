@@ -78,15 +78,14 @@ export const config = {
     overline: 'Quiénes somos',
     title: 'Una primera impresión que no se olvida.',
     paragraphs: [
-      'Paige nació de una idea simple: los negocios chicos merecen páginas tan buenas como las de los grandes. Sin costos desproporcionados, sin proyectos eternos, sin jerga técnica.',
+      'Paige nació de una idea simple: los negocios pequeños y medianos merecen páginas tan buenas como las de los grandes. Sin costos desproporcionados, sin proyectos eternos, sin jerga técnica.',
       'Nos especializamos en landing pages y software a medida — rápidas de lanzar y pensadas para convertir. Vos te enfocás en tu negocio; nosotros lo ponemos en línea.',
     ],
     quote:
-      'Una buena página web no es un gasto. Es el primer empleado que trabaja las 24 horas.',
+      'Una buena página web es el primer empleado que trabaja las 24 horas.',
     highlights: [
-      'Entrega en días, no en meses',
-      'Diseño + desarrollo + deploy incluidos',
-      'Soporte postventa real',
+      'Te la entregamos publicada y funcionando',
+      'Dominio configurado a tu nombre',
     ],
   },
 
