@@ -34,7 +34,12 @@ const Work = () => (
               key={item.id}
               sx={{
                 display: 'grid',
-                gridTemplateColumns: { xs: '1fr', md: '1.15fr 0.85fr' },
+                // En la fila invertida se invierten también las proporciones,
+                // para que el mockup siempre caiga en la columna ancha.
+                gridTemplateColumns: {
+                  xs: '1fr',
+                  md: flipped ? '0.85fr 1.15fr' : '1.15fr 0.85fr',
+                },
                 gap: { xs: 4, md: 7 },
                 alignItems: 'center',
               }}

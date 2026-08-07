@@ -96,22 +96,25 @@ export const config = {
   // componente la usa en lugar del mockup generado.
   work: {
     overline: 'Trabajos',
-    title: 'Cada proyecto arranca de cero.',
-    subtitle:
-      'Comparten el cuidado por el detalle, no la plantilla. Estos son los últimos dos.',
+    title: 'Cada negocio con su propia cara.',
+    subtitle: '',
     ctaLabel: 'Ver sitio',
     items: [
       {
         id: 'romina',
         client: 'Romina Iglesias',
         sector: 'Nutrición deportiva',
-        year: '2025',
-        url: '', // TODO: pegar la URL de Vercel / dominio propio
+        year: '2026',
+        url: 'https://lp-romina.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
         screenshot: null,
         description:
           'Landing para una licenciada en nutrición especializada en deporte. Paleta en verde salvia, foco en reservar consulta y una sección de metodología que ordena el proceso de acompañamiento.',
         tags: ['Landing page', 'React + MUI', 'Formspree', 'Vercel'],
         mockup: {
+          // `view` define qué parte del sitio se dibuja. Cada proyecto muestra
+          // una sección distinta para que las miniaturas no se lean como la
+          // misma página con otros colores.
+          view: 'hero',
           brand: 'Romina Iglesias',
           chip: 'Nutrición personalizada',
           nav: ['Sobre mí', 'Planes', 'Metodología', 'Contacto'],
@@ -119,7 +122,6 @@ export const config = {
           headlineAccent: 'rendimiento',
           cta: 'Reservar consulta',
           darkHero: false,
-          shape: 'circle',
           palette: {
             bg: '#FAFAF5',
             surface: '#FFFFFF',
@@ -135,21 +137,24 @@ export const config = {
         id: 'goitiametal',
         client: 'Goitia Metal',
         sector: 'Metalúrgica & herrería',
-        year: '2025',
-        url: '', // TODO: pegar la URL de Vercel / dominio propio
+        year: '2026',
+        url: 'https://lp-goitiametal.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
         screenshot: null,
         description:
           'Landing para una metalúrgica de San Isidro que trabaja con estudios de arquitectura. Negro grafito y bronce, hero a pantalla completa e íconos ilustrados a partir de material del cliente.',
         tags: ['Landing page', 'React + MUI', 'Assets custom', 'Vercel'],
         mockup: {
+          // Muestra la galería de obras en vez del hero: distinta estructura,
+          // distintas proporciones, no compite con la miniatura de Romina.
+          view: 'gallery',
           brand: 'GOITIA METAL',
-          chip: 'Trabajos a medida',
           nav: ['Trabajos', 'Servicios', 'Proceso', 'Contacto'],
-          headline: 'Estructuras metálicas para',
-          headlineAccent: 'proyectos de arquitectura',
           cta: 'Pedir presupuesto',
           darkHero: true,
-          shape: 'grid',
+          sectionOverline: 'Trabajos',
+          sectionTitle: 'Pérgolas, quinchos y estructuras a medida.',
+          tiles: ['Pérgola', 'Quincho', 'Escalera', 'Portón'],
+          steps: ['Medición', 'Proyecto', 'Fabricación', 'Montaje'],
           palette: {
             bg: '#F4F4F1',
             surface: '#FFFFFF',
