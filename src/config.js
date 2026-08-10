@@ -86,6 +86,7 @@ export const config = {
     highlights: [
       'Te la entregamos publicada y funcionando',
       'Dominio configurado a tu nombre',
+      'Los mensajes te llegan al mail y al WhatsApp',
     ],
   },
 
