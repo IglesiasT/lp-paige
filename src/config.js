@@ -75,7 +75,7 @@ export const config = {
 
   // ---------- Sobre mí ----------
   about: {
-    overline: 'Quiénes somos',
+    overline: 'Nosotros',
     title: 'Una primera impresión que no se olvida.',
     paragraphs: [
       'Paige nació de una idea simple: los negocios pequeños y medianos merecen páginas tan buenas como las de los grandes. Sin costos desproporcionados, sin proyectos eternos, sin jerga técnica.',
@@ -186,7 +186,7 @@ export const config = {
   services: {
     overline: 'Qué hacemos',
     title: 'Servicios pensados para negocios reales',
-    subtitle: 'Sin paquetes genéricos. Cada proyecto es único.',
+    subtitle: '',
     items: [
       {
         icon: 'RocketLaunch',
