@@ -19,14 +19,14 @@ export const config = {
 
   // ---------- Contacto ----------
   contact: {
-    whatsapp: '',                          // completar
-    whatsappDisplay: '',                   // completar
+    whatsapp: '5491161569367',
+    whatsappDisplay: '+54 9 11 6156-9367',
     whatsappMessage: 'Hola, me gustaría saber más sobre una landing page para mi negocio.',
     instagram: '',                         // completar
     instagramHandle: '',                   // completar
     instagramUrl: '',                      // completar
-    email: '',                             // completar
-    location: 'Online · Argentina',
+    email: 'iglesiastomas99@gmail.com',
+    location: 'CABA · Argentina',
     formspreeEndpoint: 'https://formspree.io/f/your-form-id',
   },
 
