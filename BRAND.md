@@ -13,8 +13,13 @@ usan sus propias paletas y tipografías; ver `CLAUDE.md` en la carpeta padre.
 | | |
 |---|---|
 | Nombre | Paige |
+| Dominio | **paigelab.com** — en Vercel |
 | Qué es | Agencia unipersonal de landing pages para pymes |
 | Tagline en uso | *Tu negocio, en línea.* |
+
+> El sufijo `lab` existe **solo en el dominio**, porque `paige.com` no estaba
+> disponible. La empresa se llama **Paige** a secas: nunca escribir "Paige Lab"
+> ni "PaigeLab" en copy, logotipo, firmas ni presupuestos.
 
 **Qué vendemos**: velocidad, que quede andando, y que el cliente no tenga que
 tocar nada. **No** vendemos diseño ni desarrollo a medida — ver
