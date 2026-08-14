@@ -103,7 +103,7 @@ export const config = {
     items: [
       {
         id: 'romina',
-        client: 'Romina Iglesias',
+        client: 'Lic. Romina Iglesias',
         sector: 'Nutrición deportiva',
         year: '2026',
         url: 'https://lp-romina.vercel.app/', // TODO: pegar dominio propio cuando lo tenga
@@ -120,7 +120,7 @@ export const config = {
           // una sección distinta para que las miniaturas no se lean como la
           // misma página con otros colores.
           view: 'hero',
-          brand: 'Romina Iglesias',
+          brand: 'Lic. Romina Iglesias',
           chip: 'Nutrición personalizada',
           nav: ['Sobre mí', 'Planes', 'Metodología', 'Contacto'],
           headline: 'Nutrición que potencia tu',
@@ -174,8 +174,8 @@ export const config = {
             surface: '#FFFFFF',
             ink: '#141414',
             muted: '#6E6E6E',
-            accent: '#C4A47C',
-            accentSoft: '#DCC6A6',
+            accent: '#9BA1A6',
+            accentSoft: '#C6CBD0',
             highlight: '#141414',
           },
         },
