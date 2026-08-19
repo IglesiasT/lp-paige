@@ -219,7 +219,7 @@ export const config = {
   methodology: {
     overline: 'Cómo trabajamos',
     title: 'Mirá cómo se arma tu página.',
-    subtitle: 'Un proceso claro de principio a fin. Scrolleá para verlo.',
+    subtitle: 'Un proceso claro de principio a fin.',
     steps: [
       {
         number: '01',
@@ -233,14 +233,14 @@ export const config = {
         number: '02',
         label: 'Propuesta',
         description:
-          'En 24–48 hs te enviamos una propuesta con alcance, tiempos y precio. Sin letra chica.',
+          'En 24-48 hs te enviamos una propuesta con alcance, tiempos y precio.',
         note: 'Estructura y secciones definidas',
       },
       {
         number: '03',
         label: 'Diseño y desarrollo',
         description:
-          'Trabajamos en tu proyecto y te mostramos avances. Tu feedback es parte del proceso, no un extra.',
+          'Trabajamos en tu proyecto y te mostramos avances. Tu feedback es parte del proceso.',
         note: 'Paleta, tipografía y contenido real',
       },
       {
