@@ -25,7 +25,7 @@ export const config = {
     instagram: '',                         // completar
     instagramHandle: '',                   // completar
     instagramUrl: '',                      // completar
-    email: '',
+    email: 'contact@paigelab.com',
     location: 'CABA · Argentina',
     formspreeEndpoint: 'https://formspree.io/f/your-form-id',
   },
