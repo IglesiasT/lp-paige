@@ -49,7 +49,7 @@ const App = () => (
       <About />
       <Services />
       <Methodology />
-      <Testimonials />
+      {config.testimonials.enabled && <Testimonials />}
       <Contact />
     </main>
     <Footer />

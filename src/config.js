@@ -255,6 +255,7 @@ export const config = {
 
   // ---------- Testimonios ----------
   testimonials: {
+    enabled: false,
     overline: 'Clientes',
     title: 'Negocios que ya están en línea.',
     items: [
