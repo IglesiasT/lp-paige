@@ -1,11 +1,11 @@
 import { Box, Container, Typography, Stack } from '@mui/material';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import DevicesIcon from '@mui/icons-material/Devices';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { config } from '../config.js';
+import { buildWhatsAppUrl } from '../utils/links.js';
 import Reveal from './Reveal.jsx';
 import SectionHeading from './SectionHeading.jsx';
 
@@ -14,14 +14,27 @@ const p = config.palette;
 const iconMap = {
   RocketLaunch: RocketLaunchIcon,
   Devices: DevicesIcon,
-  TrendingUp: TrendingUpIcon,
-  SupportAgent: SupportAgentIcon,
+  Autorenew: AutorenewIcon,
 };
 
-// Bento asimétrico: fila 1 = 7|5, fila 2 = 5|7.
-const spans = [7, 5, 5, 7];
+// Reparto de columnas del bento según cuántas cards haya en el config.
+const SPANS = {
+  1: [12],
+  2: [6, 6],
+  3: [4, 4, 4],
+  4: [7, 5, 5, 7],
+};
 
-const Services = () => (
+const waHref = (title) =>
+  buildWhatsAppUrl(
+    config.contact.whatsapp,
+    config.services.whatsappTemplate.replace('{servicio}', title),
+  );
+
+const Services = () => {
+  const spans = SPANS[config.services.items.length] ?? [];
+
+  return (
   <Box
     id="servicios"
     component="section"
@@ -73,7 +86,13 @@ const Services = () => (
               sx={{ gridColumn: { xs: 'auto', md: `span ${spans[i] ?? 6}` } }}
             >
               <Stack
+                component="a"
+                href={waHref(service.waLabel ?? service.title)}
+                target="_blank"
+                rel="noopener"
+                aria-label={`Consultar por ${service.waLabel ?? service.title} por WhatsApp`}
                 sx={{
+                  textDecoration: 'none',
                   height: '100%',
                   minHeight: { xs: 'auto', md: 300 },
                   p: { xs: 3.5, md: 4.5 },
@@ -85,11 +104,16 @@ const Services = () => (
                   overflow: 'hidden',
                   transition:
                     'border-color 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.4s ease',
-                  '&:hover': {
+                  '&:hover, &:focus-visible': {
                     borderColor: 'rgba(200, 149, 108, 0.45)',
                     transform: 'translateY(-4px)',
                     '& .svc-glow': { opacity: 1 },
                     '& .svc-arrow': { opacity: 1, transform: 'translate(0, 0)' },
+                  },
+                  '&:focus-visible': {
+                    outline: '2px solid',
+                    outlineColor: 'secondary.main',
+                    outlineOffset: 3,
                   },
                   '@media (prefers-reduced-motion: reduce)': {
                     transition: 'none',
@@ -203,8 +227,9 @@ const Services = () => (
           );
         })}
       </Box>
-    </Container>
-  </Box>
-);
+      </Container>
+    </Box>
+  );
+};
 
 export default Services;

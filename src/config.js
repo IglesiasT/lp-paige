@@ -192,37 +192,30 @@ export const config = {
         icon: 'RocketLaunch',
         title: 'Landing page',
         description:
-          'Página única de alto impacto para presentar tu negocio, captar leads o lanzar un producto. Diseño, desarrollo y deploy incluidos.',
-        tag: 'Desde 7 días hábiles',
-        featured: true,
+          'Una página para presentar tu negocio y que te contacten. La armamos, la publicamos y te la entregamos andando.',
+        tag: 'Presupuesto sin cargo',
       },
       {
         icon: 'Devices',
         title: 'Software a medida',
         description:
-          'Aplicaciones web personalizadas para digitalizar procesos, gestionar turnos, vender online o lo que tu negocio necesite.',
+          'Sistemas para ordenar el día a día: turnos, presupuestos, catálogo o stock. Partimos de una base propia y la adaptamos a cómo trabajás.',
         tag: 'Presupuesto a consultar',
       },
       {
-        icon: 'TrendingUp',
-        title: 'Optimización y rediseño',
+        icon: 'Autorenew',
+        title: 'Actualización de página existente',
+        waLabel: 'rehacer mi página actual',
         description:
-          'Mejoramos tu página actual: velocidad, conversión y diseño. Identificamos qué no está funcionando y lo resolvemos.',
-        tag: 'Análisis gratuito',
-      },
-      {
-        icon: 'SupportAgent',
-        title: 'Mantenimiento',
-        description:
-          'Actualizaciones de contenido, correcciones técnicas y soporte continuo para que tu página esté siempre impecable.',
-        tag: 'Plan mensual',
+          'Si quedó vieja, carga lenta o no se ve bien en el celular, la hacemos de nuevo con tu contenido actual.',
+        tag: 'Presupuesto sin cargo',
       },
     ],
+    whatsappTemplate: 'Hola, me interesa el servicio de {servicio}.',
   },
 
   // ---------- Metodología ----------
-  // Se renderiza como scroll narrativo: a medida que scrolleás, el mockup
-  // de la derecha se va armando paso a paso.
+  // Se renderiza como scroll narrativo
   methodology: {
     overline: 'Cómo trabajamos',
     title: 'Mirá cómo se arma tu página.',
@@ -313,7 +306,6 @@ export const config = {
         links: [
           { label: 'Landing page', href: '#servicios' },
           { label: 'Software a medida', href: '#servicios' },
-          { label: 'Mantenimiento', href: '#servicios' },
         ],
       },
       {
