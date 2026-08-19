@@ -143,7 +143,7 @@ const Services = () => {
                   direction="row"
                   justifyContent="space-between"
                   alignItems="flex-start"
-                  sx={{ mb: 'auto', position: 'relative' }}
+                  sx={{ position: 'relative' }}
                 >
                   <Box
                     sx={{
@@ -193,8 +193,14 @@ const Services = () => {
                   >
                     {service.description}
                   </Typography>
+                </Box>
 
-                  <Stack direction="row" alignItems="center" spacing={1.5}>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  spacing={1.5}
+                  sx={{ mt: 'auto', position: 'relative' }}
+                >
                     <Box
                       sx={{
                         px: 1.5,
@@ -220,8 +226,7 @@ const Services = () => {
                         transition: 'opacity 0.35s ease, transform 0.35s ease',
                       }}
                     />
-                  </Stack>
-                </Box>
+                </Stack>
               </Stack>
             </Reveal>
           );

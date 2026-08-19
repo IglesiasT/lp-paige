@@ -15,6 +15,7 @@ const SectionHeading = ({
   dark = false,
   align = 'left',
   maxWidth = 620,
+  titleSize,
 }) => (
   <Box
     sx={{
@@ -54,7 +55,7 @@ const SectionHeading = ({
       <Typography
         variant="h2"
         sx={{
-          fontSize: { xs: '2.2rem', sm: '2.6rem', md: '3.2rem' },
+          fontSize: titleSize ?? { xs: '2.2rem', sm: '2.6rem', md: '3.2rem' },
           color: dark ? p.onDark : 'text.primary',
           mb: subtitle ? 2.5 : 0,
         }}

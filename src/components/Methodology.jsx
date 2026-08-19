@@ -44,8 +44,8 @@ const StepItem = memo(({ step, active }) => (
       <Typography
         variant="h4"
         sx={{
-          fontSize: { xs: '1.4rem', md: '1.75rem' },
-          mb: 1,
+          fontSize: { xs: '1.3rem', md: '1.45rem' },
+          mb: 0.75,
           color: 'text.primary',
         }}
       >
@@ -54,8 +54,8 @@ const StepItem = memo(({ step, active }) => (
       <Typography
         sx={{
           color: 'text.secondary',
-          fontSize: '0.95rem',
-          lineHeight: 1.75,
+          fontSize: '0.9rem',
+          lineHeight: 1.6,
           maxWidth: 420,
         }}
       >
@@ -63,7 +63,7 @@ const StepItem = memo(({ step, active }) => (
       </Typography>
       <Typography
         sx={{
-          mt: 1.5,
+          mt: 1,
           fontFamily: (t) => t.typography.fontFamilyMono,
           fontSize: '0.68rem',
           letterSpacing: '0.06em',
@@ -102,6 +102,7 @@ const Methodology = () => {
       title={config.methodology.title}
       subtitle={config.methodology.subtitle}
       maxWidth={560}
+      titleSize={{ xs: '2.1rem', sm: '2.4rem', md: '2.6rem' }}
     />
   );
 
@@ -161,7 +162,7 @@ const Methodology = () => {
             <Box>
               {heading}
 
-              <Stack direction="row" spacing={3} sx={{ mt: 5 }}>
+              <Stack direction="row" spacing={3} sx={{ mt: 4 }}>
                 {/* Riel de progreso */}
                 <Box
                   aria-hidden
@@ -186,7 +187,7 @@ const Methodology = () => {
                   />
                 </Box>
 
-                <Stack spacing={3.5} sx={{ flex: 1 }}>
+                <Stack spacing={2.5} sx={{ flex: 1 }}>
                   {steps.map((step, i) => (
                     <StepItem
                       key={step.number}
