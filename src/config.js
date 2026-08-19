@@ -1,6 +1,5 @@
 // =============================================================
-// Configuración del cliente — Paige
-// Agencia de Landing Pages
+// Paige. Agencia de Landing Pages
 // =============================================================
 
 export const config = {
