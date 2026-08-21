@@ -292,6 +292,8 @@ export const config = {
       message: '¿De qué se trata tu negocio?',
       submit: 'Enviar',
     },
+    // {nombre} se reemplaza con lo que cargó el visitante
+    mailSubject: 'Paige - Consulta de {nombre}',
     whatsappLabel: 'Prefiero escribir por WhatsApp',
     infoTitle: 'Otros canales',
   },

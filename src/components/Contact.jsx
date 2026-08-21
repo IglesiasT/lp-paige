@@ -25,6 +25,8 @@ const initialForm = { name: '', email: '', message: '' };
 const Contact = () => {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState('idle');
+  // Señuelo anti-spam: un humano nunca lo completa porque no lo ve
+  const [trap, setTrap] = useState('');
 
   const waUrl = buildWhatsAppUrl(
     config.contact.whatsapp,
@@ -45,7 +47,14 @@ const Contact = () => {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          _subject: config.contactSection.mailSubject.replace(
+            '{nombre}',
+            form.name || 'alguien',
+          ),
+          _gotcha: trap,
+        }),
       });
       if (res.ok) {
         setStatus('success');
@@ -170,6 +179,24 @@ const Contact = () => {
           <Reveal>
             <Box component="form" onSubmit={handleSubmit} noValidate>
               <Stack spacing={2.5}>
+                <Box
+                  component="input"
+                  type="text"
+                  name="_gotcha"
+                  value={trap}
+                  onChange={(e) => setTrap(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  sx={{
+                    position: 'absolute',
+                    width: 1,
+                    height: 1,
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    left: -9999,
+                  }}
+                />
                 <TextField
                   name="name"
                   label={labels.name}
